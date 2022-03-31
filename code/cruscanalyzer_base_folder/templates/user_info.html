@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% comment %}
+Template showing the account of a selected user and his saved texts.
+Includes user_management/base/base_user_profile.html template and text_management/base/base_user_text_list.html.
+{% endcomment %}
+
+{% load static %}
+{% load app_filters %}
+
+{% block title %}
+    Profilo
+{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'user_management/base/base_user_profile.html' with user_for_profile=view.user_for_profile texts=view.object_list title_profile="Profilo di "|add:view.user_for_profile.username %}
+    </div>
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'text_management/base/base_user_text_list.html' with object_list=view.object_list%}
+    </div>
+
+{% endblock %}

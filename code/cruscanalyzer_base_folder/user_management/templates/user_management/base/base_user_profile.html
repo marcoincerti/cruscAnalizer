@@ -1,0 +1,181 @@
+{% comment %}
+Base template used to show user data (account).
+{% endcomment %}
+
+{% load app_filters %}
+{% load static %}
+
+<div class="container">
+    <h3 class="font-weight-bold">{{ title_profile }}</h3>
+    <div class="card-columns mt-3">
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="card-title">USERNAME</h6>
+                <p class="card-text font-weight-bold">{{ user_for_profile.username }}</p>
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="card-title">NOME</h6>
+                <p class="card-text font-weight-bold">{{ user_for_profile.first_name }} {{ user_for_profile.last_name }}</p>
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="card-title">EMAIL</h6>
+                <p class="card-text font-weight-bold">{{ user_for_profile.email }}</p>
+            </div>
+        </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="card-title">NUMERO DI PAROLE</h6>
+                <p class="card-text font-weight-bold">{{ texts|get_user_words }}</p>
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="card-title">DATA DI ISCRIZIONE</h6>
+                <div class="container">
+                    <span class="card-text font-weight-bold">{{ user_for_profile.date_joined|date:'l'}}</span><br>
+                    <span class="card-text font-weight-bold">{{ user_for_profile.date_joined|date:'d/m/Y' }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-primary text-white text-center p-3">
+            <blockquote class="blockquote mb-0">
+                <p>Media indice di complessità:</p>
+                <p class="font-weight-bold">{{ texts|get_avg_complexity }}</p>
+            </blockquote>
+        </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">TESTI PRESENTI</h5>
+                <p class="card-text font-weight-bold">{{ texts|get_count_texts }}</p>
+            </div>
+        </div>
+        {% if texts %}
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        PAROLE POPOLARI
+                        <span class="help-tooltip" data-toggle="tooltip" data-placement="bottom"
+                              title="Sposta il mouse sul grafico per vedere le parole">
+                            <i class="fas fa-info-circle"></i>
+                         </span>
+                    </h5>
+                    <div id="container">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                    <p class="card-text mt-3"><small class="text-muted">Mostra le 5 parole piu frequenti nei tuoi testi</small></p>
+                </div>
+            </div>
+        {% endif %}
+        {% if user_for_profile == user %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">IMPOSTAZIONI</h5>
+                    <p class="card-text">Numero di caratteri minimo richiesto per salvare le parole:
+                        <br>{{ user.user_text_settings.min_characters }}</p>
+                    <hr>
+                    <p class="card-text">
+                        Blacklist:
+                        {% if user.user_text_settings.blacklist|first != '' %}
+                            {% for black_word in user.user_text_settings.blacklist|slice:5 %}
+                                <br>- {{ black_word|truncatechars:20 }}
+                            {% endfor %}
+                            {% if user.user_text_settings.blacklist|length > 5 %}
+                                <br> e altre {{ user.user_text_settings.blacklist|length|add:'-5' }}
+                            {% endif %}
+                        {% else %}
+                            Ancora nessuna parola
+                        {% endif %}
+                    </p>
+                </div>
+                <a class="flat-link" href="{% url 'text_management:text-settings' %}">
+                    <div class="card-footer text-center"><i class="fas fa-cog"></i> Vedi di più</div></a>
+            </div>
+
+            <a class="card bg-warning text-white text-center" href="{% url 'user_management:user-update' %}">
+                <div class="card-body">
+                    <h5 class="card-text">Modifica account</h5>
+                </div>
+            </a>
+
+            <a class="card bg-danger text-white text-center trigger-btn" id="card-delete-user" href="#myModal"
+               data-toggle="modal">
+                <div class="card-body">
+                    <h5 class="card-text">Elimina account</h5>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% if user_for_profile == user %}
+
+    <!-- Modal HTML for deleting user account-->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminare questo account?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Questa azione non sarà reversibile. Oltre all'account verranno cancellate anche tutte le analisi di
+                        testi salvate.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <a id="delete-user-button" type="button" class="btn btn-danger"
+                       href="{% url 'user_management:delete-user' %}">Elimina</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+
+    var words = [];
+    var freqs = [];
+
+    {% for word, freq in texts|get_ordered_words_frequencies_blacklist_filtered:user|slice:"5" %}
+        words.push('{{ word }}');
+        freqs.push('{{ freq }}');
+    {% endfor %}
+
+    var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: freqs,
+                backgroundColor: [
+                    '#ff1d7b', '#7bff1d', '#1dd9ff', '#ff611d', '#fff200'
+                ],
+                label: 'Population'
+            }],
+            labels: words
+        },
+        options: {
+            responsive: true,
+            legend: {
+                display: false
+            },
+        }
+    };
+
+    window.onload = function() {
+        var ctx = document.getElementById('pie-chart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+    };
+
+</script>

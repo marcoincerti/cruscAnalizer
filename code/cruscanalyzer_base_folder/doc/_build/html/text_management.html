@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>text_management package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="text-management-package">
+<h1>text_management package<a class="headerlink" href="#text-management-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="text_management.migrations.html">text_management.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations.0001_initial">text_management.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations.0002_auto_20200503_1409">text_management.migrations.0002_auto_20200503_1409 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations.0003_auto_20200503_1410">text_management.migrations.0003_auto_20200503_1410 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations.0004_auto_20200503_1842">text_management.migrations.0004_auto_20200503_1842 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations.0005_text_complexity">text_management.migrations.0005_text_complexity module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.migrations.html#module-text_management.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text_management.templatetags.html">text_management.templatetags package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text_management.templatetags.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.templatetags.html#module-text_management.templatetags.app_filters">text_management.templatetags.app_filters module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_management.templatetags.html#module-text_management.templatetags">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.admin">
+<span id="text-management-admin-module"></span><h2>text_management.admin module<a class="headerlink" href="#module-text_management.admin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="text-management-analysis-classes-module">
+<h2>text_management.analysis_classes module<a class="headerlink" href="#text-management-analysis-classes-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.apps">
+<span id="text-management-apps-module"></span><h2>text_management.apps module<a class="headerlink" href="#module-text_management.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.apps.TextManagementConfig">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.apps.</code><code class="sig-name descname">TextManagementConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">app_name</span></em>, <em class="sig-param"><span class="n">app_module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.apps.TextManagementConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.apps.TextManagementConfig.name">
+<code class="sig-name descname">name</code><em class="property"> = 'text_management'</em><a class="headerlink" href="#text_management.apps.TextManagementConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.forms">
+<span id="text-management-forms-module"></span><h2>text_management.forms module<a class="headerlink" href="#module-text_management.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.forms.InsertTextCrispyForm">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.forms.</code><code class="sig-name descname">InsertTextCrispyForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.forms.InsertTextCrispyForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form used for inserting a text.
+Form elements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Title</p></li>
+<li><p>Author (optional)</p></li>
+<li><p>Link (optional)</p></li>
+<li><p>Category (optional)</p></li>
+<li><p>Checbox for deleting the short words</p></li>
+<li><p>Text</p></li>
+</ul>
+</div></blockquote>
+<dl class="py attribute">
+<dt id="text_management.forms.InsertTextCrispyForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'author': &lt;django.forms.fields.CharField object&gt;, 'category': &lt;django.forms.models.ModelChoiceField object&gt;, 'delete_short_words': &lt;django.forms.fields.BooleanField object&gt;, 'link': &lt;django.forms.fields.URLField object&gt;, 'text': &lt;django.forms.fields.CharField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#text_management.forms.InsertTextCrispyForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.InsertTextCrispyForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'author': &lt;django.forms.fields.CharField object&gt;, 'category': &lt;django.forms.models.ModelChoiceField object&gt;, 'delete_short_words': &lt;django.forms.fields.BooleanField object&gt;, 'link': &lt;django.forms.fields.URLField object&gt;, 'text': &lt;django.forms.fields.CharField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#text_management.forms.InsertTextCrispyForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.InsertTextCrispyForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#text_management.forms.InsertTextCrispyForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.forms.InsertTextCrispyForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#text_management.forms.InsertTextCrispyForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.forms.</code><code class="sig-name descname">UpdateBlacklistCrispyForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('blacklist_string',)</em><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.UserTextSettings" title="text_management.models.UserTextSettings"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.UserTextSettings</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'blacklist_string': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.forms.UpdateBlacklistCrispyForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#text_management.forms.UpdateBlacklistCrispyForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.forms.UpdateTextCrispyForm">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.forms.</code><code class="sig-name descname">UpdateTextCrispyForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<p>Form used for updating a text.
+Form elements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Title</p></li>
+<li><p>Author (optional)</p></li>
+<li><p>Link (optional)</p></li>
+<li><p>Category (optional)</p></li>
+</ul>
+</div></blockquote>
+<dl class="py class">
+<dt id="text_management.forms.UpdateTextCrispyForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('title', 'author', 'link', 'category')</em><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.Meta.labels">
+<code class="sig-name descname">labels</code><em class="property"> = {'author': 'Autore', 'category': 'Categoria', 'link': 'Link', 'title': 'Titolo'}</em><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.Meta.labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.Text" title="text_management.models.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.Text</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'author': &lt;django.forms.fields.CharField object&gt;, 'category': &lt;django.forms.models.ModelChoiceField object&gt;, 'link': &lt;django.forms.fields.URLField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.forms.UpdateTextCrispyForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.forms.UpdateTextCrispyForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#text_management.forms.UpdateTextCrispyForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.models">
+<span id="text-management-models-module"></span><h2>text_management.models module<a class="headerlink" href="#module-text_management.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.models.Analysis">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.models.</code><code class="sig-name descname">Analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model to store the analysis of a text.
+Fields: - Reference to the original text.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Word of the text.</p></li>
+<li><p>Frequency of the word inside the text.</p></li>
+</ul>
+</div></blockquote>
+<dl class="py exception">
+<dt id="text_management.models.Analysis.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#text_management.models.Analysis.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="text_management.models.Analysis.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#text_management.models.Analysis.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.frequency">
+<code class="sig-name descname">frequency</code><a class="headerlink" href="#text_management.models.Analysis.frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#text_management.models.Analysis.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#text_management.models.Analysis.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#text_management.models.Analysis.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.text_id">
+<code class="sig-name descname">text_id</code><a class="headerlink" href="#text_management.models.Analysis.text_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Analysis.word">
+<code class="sig-name descname">word</code><a class="headerlink" href="#text_management.models.Analysis.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.models.Category">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.models.</code><code class="sig-name descname">Category</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model to store the possible categories of a text.
+They are pre-inserted by the admins of the project and are not modifiable by the users.</p>
+<dl class="py exception">
+<dt id="text_management.models.Category.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#text_management.models.Category.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="text_management.models.Category.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#text_management.models.Category.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Category.category_texts">
+<code class="sig-name descname">category_texts</code><a class="headerlink" href="#text_management.models.Category.category_texts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Category.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#text_management.models.Category.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Category.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#text_management.models.Category.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Category.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#text_management.models.Category.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.models.Text">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.models.</code><code class="sig-name descname">Text</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model to store the metadata of a text.</p>
+<dl class="py exception">
+<dt id="text_management.models.Text.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#text_management.models.Text.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="text_management.models.Text.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#text_management.models.Text.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.analysis">
+<em class="property">property </em><code class="sig-name descname">analysis</code><a class="headerlink" href="#text_management.models.Text.analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property called when trying to access mytext.analysis, calculates the analysis with the the Models Analysis of
+this text if stored, otherwise calculates it with the function analyze_text with the text content.
+:returns: dict containing the words and their frequency in descending order</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.author">
+<code class="sig-name descname">author</code><a class="headerlink" href="#text_management.models.Text.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.category">
+<code class="sig-name descname">category</code><a class="headerlink" href="#text_management.models.Text.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.category_id">
+<code class="sig-name descname">category_id</code><a class="headerlink" href="#text_management.models.Text.category_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.complexity">
+<code class="sig-name descname">complexity</code><a class="headerlink" href="#text_management.models.Text.complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.content">
+<code class="sig-name descname">content</code><em class="property"> = ''</em><a class="headerlink" href="#text_management.models.Text.content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.filtered_analysis">
+<code class="sig-name descname">filtered_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Text.filtered_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the text analysis with the words inside the user blacklist.
+:param user: Used to get the words of his blacklist.
+:returns: the filtered analysis without the “blackwords”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.get_black_words_number">
+<code class="sig-name descname">get_black_words_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Text.get_black_words_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Counts how many black words are present in an analysis of a text.
+:param user: Used to get the words of his blacklist.
+:return black_words_number: number of black words in the text.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#text_management.models.Text.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.link">
+<code class="sig-name descname">link</code><a class="headerlink" href="#text_management.models.Text.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#text_management.models.Text.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.remove_short_words_from_analysis">
+<code class="sig-name descname">remove_short_words_from_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_characters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Text.remove_short_words_from_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes from the text analysis the words that are shorter than min_characters.
+:param min_characters: int of the minimum number of characters that a word has to have in order to be saved.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.text_analysis">
+<code class="sig-name descname">text_analysis</code><a class="headerlink" href="#text_management.models.Text.text_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#text_management.models.Text.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.to_dict_only_metadata">
+<code class="sig-name descname">to_dict_only_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.Text.to_dict_only_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called from the javascript script when using filter json_script, in order to access safely the text data
+:return: dictionary with the object data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.user_owner">
+<code class="sig-name descname">user_owner</code><a class="headerlink" href="#text_management.models.Text.user_owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.Text.user_owner_id">
+<code class="sig-name descname">user_owner_id</code><a class="headerlink" href="#text_management.models.Text.user_owner_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.Text.word_counter">
+<em class="property">property </em><code class="sig-name descname">word_counter</code><a class="headerlink" href="#text_management.models.Text.word_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property called when trying to access mytext.word_counter, calculates the total number of words of the text.
+:returns: total number of words of the text saved in the database.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.models.UserTextSettings">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.models.</code><code class="sig-name descname">UserTextSettings</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.UserTextSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model to store the custom text settings of a user.
+Fields: - Reference to the user.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>His blacklist (words not to be displayed by the analyzes) –&gt; String with words separated by ;</p></li>
+<li><p>Minimum number of characters the words must have, otherwise they’re not saved in the analyzes.</p></li>
+</ul>
+</div></blockquote>
+<dl class="py exception">
+<dt id="text_management.models.UserTextSettings.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#text_management.models.UserTextSettings.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="text_management.models.UserTextSettings.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#text_management.models.UserTextSettings.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.models.UserTextSettings.blacklist">
+<em class="property">property </em><code class="sig-name descname">blacklist</code><a class="headerlink" href="#text_management.models.UserTextSettings.blacklist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property that removes all the whitespaces from the stored blacklist and returns the words in it that are
+separated by a ; as a list
+:returns: list of words of the blacklist</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.UserTextSettings.blacklist_string">
+<code class="sig-name descname">blacklist_string</code><a class="headerlink" href="#text_management.models.UserTextSettings.blacklist_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.UserTextSettings.min_characters">
+<code class="sig-name descname">min_characters</code><a class="headerlink" href="#text_management.models.UserTextSettings.min_characters" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.UserTextSettings.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#text_management.models.UserTextSettings.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.UserTextSettings.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#text_management.models.UserTextSettings.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.models.UserTextSettings.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#text_management.models.UserTextSettings.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.models.create_favorites">
+<code class="sig-prename descclassname">text_management.models.</code><code class="sig-name descname">create_favorites</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sender</span></em>, <em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">created</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.models.create_favorites" title="Permalink to this definition">¶</a></dt>
+<dd><p>When a new :User: is created, it creates his UserTextSettings
+:param sender:
+:param instance: of the user created
+:param created: bool
+:param kwargs:
+:returns:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.tests">
+<span id="text-management-tests-module"></span><h2>text_management.tests module<a class="headerlink" href="#module-text_management.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.urls">
+<span id="text-management-urls-module"></span><h2>text_management.urls module<a class="headerlink" href="#module-text_management.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.views">
+<span id="text-management-views-module"></span><h2>text_management.views module<a class="headerlink" href="#module-text_management.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.views.BaseViewForAnalysis">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">BaseViewForAnalysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.BaseViewForAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateView</span></code></p>
+<p>Base View for analyzing a text.</p>
+<p>Used for both :view: ViewAnalysis and :view: ViewSavedAnalysis.</p>
+<dl class="py attribute">
+<dt id="text_management.views.BaseViewForAnalysis.languages">
+<code class="sig-name descname">languages</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.BaseViewForAnalysis.languages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.BaseViewForAnalysis.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/single_text_analysis.html'</em><a class="headerlink" href="#text_management.views.BaseViewForAnalysis.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.BaseViewForAnalysis.text_inserted">
+<code class="sig-name descname">text_inserted</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.BaseViewForAnalysis.text_inserted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.DashboardView">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">DashboardView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.DashboardView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_management.views.BaseViewForAnalysis" title="text_management.views.BaseViewForAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.views.BaseViewForAnalysis</span></code></a></p>
+<p>View for displaying dashboard with texts statistics as total number of words, all saved words and their
+frequencies…</p>
+<dl class="py attribute">
+<dt id="text_management.views.DashboardView.context_object_name">
+<code class="sig-name descname">context_object_name</code><em class="property"> = 'object_list'</em><a class="headerlink" href="#text_management.views.DashboardView.context_object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.DashboardView.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.DashboardView.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.DashboardView.object_categories">
+<code class="sig-name descname">object_categories</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.DashboardView.object_categories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.DashboardView.object_list">
+<code class="sig-name descname">object_list</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.DashboardView.object_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.DashboardView.object_users">
+<code class="sig-name descname">object_users</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.DashboardView.object_users" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.DashboardView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/dashboard_analytics.html'</em><a class="headerlink" href="#text_management.views.DashboardView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextDelete">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextDelete</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextDelete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.DeleteView</span></code></p>
+<p>View for deleting a saved text analysis.</p>
+<dl class="py method">
+<dt id="text_management.views.TextDelete.dispatch">
+<code class="sig-name descname">dispatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextDelete.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if user authenticated is owner of the text analysis</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextDelete.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.views.TextDelete.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.Text" title="text_management.models.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.Text</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextDelete.success_url">
+<code class="sig-name descname">success_url</code><em class="property"> = '/text_management/text/list'</em><a class="headerlink" href="#text_management.views.TextDelete.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextDelete.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/text_delete.html'</em><a class="headerlink" href="#text_management.views.TextDelete.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextInsert">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextInsert</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextInsert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.FormView</span></code></p>
+<p>View for inserting the text.</p>
+<p>Contains a :form: InsertCrispyForm.</p>
+<dl class="py attribute">
+<dt id="text_management.views.TextInsert.form_class">
+<code class="sig-name descname">form_class</code><a class="headerlink" href="#text_management.views.TextInsert.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.forms.InsertTextCrispyForm" title="text_management.forms.InsertTextCrispyForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.forms.InsertTextCrispyForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextInsert.form_valid">
+<code class="sig-name descname">form_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">form</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextInsert.form_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the form is valid, redirect to the supplied URL.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextInsert.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/text_insert.html'</em><a class="headerlink" href="#text_management.views.TextInsert.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextList">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextList</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<p>View for displaying user’s list of saved text analysis.</p>
+<dl class="py method">
+<dt id="text_management.views.TextList.get_queryset">
+<code class="sig-name descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextList.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filtrates the metadata of texts in the database owned by the current user using his pk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Metadata list of texts of the current user.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextList.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.views.TextList.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.Text" title="text_management.models.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.Text</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextList.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/user_text_list.html'</em><a class="headerlink" href="#text_management.views.TextList.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextSearchView">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextSearchView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSearchView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<p>View for displaying list of results from data searched.</p>
+<dl class="py attribute">
+<dt id="text_management.views.TextSearchView.context_object_name">
+<code class="sig-name descname">context_object_name</code><em class="property"> = 'all_search_results'</em><a class="headerlink" href="#text_management.views.TextSearchView.context_object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextSearchView.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSearchView.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the context for this view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextSearchView.get_queryset">
+<code class="sig-name descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSearchView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query to the database return the results</p>
+<p>Gets the data to search for from the GET request.
+Combine the data and queries the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Texts matching the data searched.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextSearchView.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.views.TextSearchView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.Text" title="text_management.models.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.Text</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextSearchView.result_users">
+<code class="sig-name descname">result_users</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.TextSearchView.result_users" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextSearchView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.TextSearchView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextSettingsView">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextSettingsView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSettingsView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateView</span></code></p>
+<p>View for displaying and saving text settings.</p>
+<dl class="py method">
+<dt id="text_management.views.TextSettingsView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSettingsView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextSettingsView.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextSettingsView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the POST data and save to database
+:return: Redirects to :view: ProfileView</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextSettingsView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/text_settings.html'</em><a class="headerlink" href="#text_management.views.TextSettingsView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.TextUpdate">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">TextUpdate</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.UpdateView</span></code></p>
+<p>View for updating the metadata of a saved text analysis.</p>
+<dl class="py method">
+<dt id="text_management.views.TextUpdate.dispatch">
+<code class="sig-name descname">dispatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextUpdate.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if user authenticated is owner of the text analysis</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextUpdate.form_class">
+<code class="sig-name descname">form_class</code><a class="headerlink" href="#text_management.views.TextUpdate.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.forms.UpdateTextCrispyForm" title="text_management.forms.UpdateTextCrispyForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.forms.UpdateTextCrispyForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextUpdate.get_success_url">
+<code class="sig-name descname">get_success_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextUpdate.get_success_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the URL to redirect to after processing a valid form.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextUpdate.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#text_management.views.TextUpdate.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#text_management.models.Text" title="text_management.models.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.models.Text</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.TextUpdate.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.TextUpdate.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add ‘Cancel’ button redirect.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.TextUpdate.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/text_update.html'</em><a class="headerlink" href="#text_management.views.TextUpdate.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.ViewAnalysis">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">ViewAnalysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_management.views.BaseViewForAnalysis" title="text_management.views.BaseViewForAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.views.BaseViewForAnalysis</span></code></a></p>
+<p>View for displaying the analysis of an inserted text.</p>
+<p>Accessible only through POST method, receives the data of a text and performs all the analysis operations.</p>
+<dl class="py method">
+<dt id="text_management.views.ViewAnalysis.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewAnalysis.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the context with the info of the text received through POST.</p>
+<p>Usually, the data received are passed from the form contained in :view: TextInsert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> – Used to get the data of the text inserted to analyze</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Context used to populate the template</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.ViewComparedAnalysis">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">ViewComparedAnalysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewComparedAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_management.views.BaseViewForAnalysis" title="text_management.views.BaseViewForAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.views.BaseViewForAnalysis</span></code></a></p>
+<p>View for comparing two selected Text analyzes.</p>
+<dl class="py attribute">
+<dt id="text_management.views.ViewComparedAnalysis.first_text">
+<code class="sig-name descname">first_text</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.ViewComparedAnalysis.first_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="text_management.views.ViewComparedAnalysis.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewComparedAnalysis.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches in the DB the 2 selected texts and send the context updated to the template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Used to get the pk of the two selected texts</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Context to populate the template with</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.ViewComparedAnalysis.second_text">
+<code class="sig-name descname">second_text</code><em class="property"> = None</em><a class="headerlink" href="#text_management.views.ViewComparedAnalysis.second_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.views.ViewComparedAnalysis.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'text_management/compare_text_analysis.html'</em><a class="headerlink" href="#text_management.views.ViewComparedAnalysis.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="text_management.views.ViewSavedAnalysis">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">ViewSavedAnalysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewSavedAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_management.views.BaseViewForAnalysis" title="text_management.views.BaseViewForAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">text_management.views.BaseViewForAnalysis</span></code></a></p>
+<p>View for displaying a saved analysis.</p>
+<dl class="py method">
+<dt id="text_management.views.ViewSavedAnalysis.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.ViewSavedAnalysis.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches in the DB the selected text and send the context to the template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Used to get the pk of the selected text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Context to populate the template with</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.views.get_translate_data">
+<code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">get_translate_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.get_translate_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function call from ajax request for translation.</p>
+<p>Retrieves data attributes of request and use them for translate a word.
+Accessible only with GET request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> – ajax request data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>translated word</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>language source if detected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.views.save_analysis">
+<code class="sig-prename descclassname">text_management.views.</code><code class="sig-name descname">save_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.views.save_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function call from ajax request for saving ana analysis.</p>
+<p>Retrieves data attributes from request and use them for saving the metadata of the text and his analysis.
+Accessible only with POST request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> – Ajax request data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool indicating if text has been saved</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-text_management" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/text_management.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

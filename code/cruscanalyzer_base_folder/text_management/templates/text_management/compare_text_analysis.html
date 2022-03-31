@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% comment %}
+    Page for displaying compare data relating to the analysis of two texts
+{% endcomment %}
+{% block extra_css %}
+    <style>
+        .dataTables_filter input { width: 169px !important; }
+        .dataTables_info {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Confronto analisi{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg">
+            <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+                {% include 'text_management/base/base_text_analysis_header.html' with text_data=view.first_text %}
+                {% include 'text_management/base/base_text_analysis.html' with items=view.first_text|get_filtered_analysis:user|get_dict_items %}
+            </div>
+            <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+                {% include 'text_management/base/base_frequency_chart.html' with id_chart='1' items=view.first_text|get_filtered_analysis:user|get_dict_items avg_frequency=view.first_text|get_filtered_analysis:user|get_avg_frequency word_length=view.first_text|get_filtered_analysis:user|get_obj_len %}
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+                {% include 'text_management/base/base_text_analysis_header.html' with text_data=view.second_text %}
+                {% include 'text_management/base/base_text_analysis.html' with items=view.second_text|get_filtered_analysis:user|get_dict_items %}
+            </div>
+            <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+                {% include 'text_management/base/base_frequency_chart.html' with id_chart='2' items=view.second_text|get_filtered_analysis:user|get_dict_items avg_frequency=view.second_text|get_filtered_analysis:user|get_avg_frequency word_length=view.second_text|get_filtered_analysis:user|get_obj_len %}
+            </div>
+        </div>
+    </div>
+
+    {% include 'text_management/base/translate_modal.html' with languages=view.languages %}
+    {% include 'text_management/base/compare_modal.html' %}
+    {% include 'text_management/base/complexity_modal.html' %}
+{% endblock %}
+
+{% block extra_javascript %}
+    <script>
+        window.onload = function() {
+            var ctx = document.getElementById('bar-chart1').getContext('2d');
+            window.myPie = new Chart(ctx, config1);
+            var ctx2 = document.getElementById('bar-chart2').getContext('2d');
+            window.myPie = new Chart(ctx2, config2);
+        };
+    </script>
+    {% include 'text_management/base/text_analysis_ajax.html' %}
+{% endblock %}

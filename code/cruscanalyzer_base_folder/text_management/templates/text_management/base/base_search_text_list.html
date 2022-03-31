@@ -1,0 +1,16 @@
+{% extends 'text_management/base/base_text_list.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% comment %}
+    Page for displaying list of searched text analysis.
+{% endcomment %}
+
+{% block text_list_username %}
+    <br>
+    Utente: <span class="font-weight-light">{{ text.user_owner.username }}</span>
+{% endblock %}
+
+{% block text_list_empty_message %}
+    <p>Nessuna analisi corrisponde alla ricerca.</p>
+{% endblock %}

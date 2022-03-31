@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>user_management package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="user-management-package">
+<h1>user_management package<a class="headerlink" href="#user-management-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_management.migrations.html">user_management.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.migrations.html#module-user_management.migrations.0001_initial">user_management.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.migrations.html#module-user_management.migrations.0002_auto_20200501_2035">user_management.migrations.0002_auto_20200501_2035 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.migrations.html#module-user_management.migrations.0003_delete_utente">user_management.migrations.0003_delete_utente module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.migrations.html#module-user_management.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="user-management-admin-module">
+<h2>user_management.admin module<a class="headerlink" href="#user-management-admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-user_management.apps">
+<span id="user-management-apps-module"></span><h2>user_management.apps module<a class="headerlink" href="#module-user_management.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="user_management.apps.UserManagementConfig">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.apps.</code><code class="sig-name descname">UserManagementConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">app_name</span></em>, <em class="sig-param"><span class="n">app_module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.apps.UserManagementConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="user_management.apps.UserManagementConfig.name">
+<code class="sig-name descname">name</code><em class="property"> = 'user_management'</em><a class="headerlink" href="#user_management.apps.UserManagementConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-user_management.forms">
+<span id="user-management-forms-module"></span><h2>user_management.forms module<a class="headerlink" href="#module-user_management.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="user_management.forms.LoginForm">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.forms.</code><code class="sig-name descname">LoginForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.LoginForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.forms.AuthenticationForm</span></code></p>
+<p>Login form where an already registered user can enter the username and password to authenticate</p>
+<dl class="py attribute">
+<dt id="user_management.forms.LoginForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'password': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.contrib.auth.forms.UsernameField object&gt;}</em><a class="headerlink" href="#user_management.forms.LoginForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.LoginForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'password': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.contrib.auth.forms.UsernameField object&gt;}</em><a class="headerlink" href="#user_management.forms.LoginForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.LoginForm.error_messages">
+<code class="sig-name descname">error_messages</code><em class="property"> = {'inactive': 'Questo account non è più attivo.', 'invalid_login': 'Username o password errati. Perfavore, controlla i tuoi dati.'}</em><a class="headerlink" href="#user_management.forms.LoginForm.error_messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.LoginForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#user_management.forms.LoginForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.LoginForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#user_management.forms.LoginForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.forms.RegistrationForm">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.forms.</code><code class="sig-name descname">RegistrationForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.RegistrationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.forms.UserCreationForm</span></code></p>
+<p>Registration form where the user entering: username, email, name, last name
+and password can create a new profile to access the application</p>
+<dl class="py class">
+<dt id="user_management.forms.RegistrationForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#user_management.forms.RegistrationForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('email', 'username', 'first_name', 'last_name')</em><a class="headerlink" href="#user_management.forms.RegistrationForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#user_management.forms.RegistrationForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.models.User</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#user_management.forms.RegistrationForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.RegistrationForm.clean_email">
+<code class="sig-name descname">clean_email</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.RegistrationForm.clean_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cheks if the inserted mail is already present in the database (only if it’s been changed from the original).
+:returns: mail
+:raises: forms.ValidationError</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.RegistrationForm.clean_username">
+<code class="sig-name descname">clean_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.RegistrationForm.clean_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cheks if the inserted username is already present in the database (only if it’s been changed from the original).
+:returns: username
+:raises: forms.ValidationError</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#user_management.forms.RegistrationForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.error_messages">
+<code class="sig-name descname">error_messages</code><em class="property"> = {'password_mismatch': 'Le password non corrispondono!'}</em><a class="headerlink" href="#user_management.forms.RegistrationForm.error_messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.RegistrationForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#user_management.forms.RegistrationForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.RegistrationForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#user_management.forms.RegistrationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.forms.UpdateUserForm">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.forms.</code><code class="sig-name descname">UpdateUserForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.UpdateUserForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form for updating the user data.
+Not inheritance of ModelForm because otherwise it wouldn’t be possible to update the user data because the username
+is already present in the database.</p>
+<dl class="py attribute">
+<dt id="user_management.forms.UpdateUserForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#user_management.forms.UpdateUserForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.UpdateUserForm.clean_email">
+<code class="sig-name descname">clean_email</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.UpdateUserForm.clean_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the inserted mail is already present in the database (only if it’s been changed from the original).
+:returns: mail
+:raises: forms.ValidationError</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.UpdateUserForm.clean_username">
+<code class="sig-name descname">clean_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.UpdateUserForm.clean_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the inserted username is already present in the database (only if it’s been changed from the original).
+:returns: username
+:raises: forms.ValidationError</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.UpdateUserForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#user_management.forms.UpdateUserForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.forms.UpdateUserForm.helper">
+<code class="sig-name descname">helper</code><em class="property"> = &lt;crispy_forms.helper.FormHelper object&gt;</em><a class="headerlink" href="#user_management.forms.UpdateUserForm.helper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.UpdateUserForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#user_management.forms.UpdateUserForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.forms.UpdateUserForm.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commit</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.forms.UpdateUserForm.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the authenticated user data on the database.
+:param commit: If save the new data.
+:returns: authenticated user.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="user-management-models-module">
+<h2>user_management.models module<a class="headerlink" href="#user-management-models-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-user_management.urls">
+<span id="user-management-urls-module"></span><h2>user_management.urls module<a class="headerlink" href="#module-user_management.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-user_management.views">
+<span id="user-management-views-module"></span><h2>user_management.views module<a class="headerlink" href="#module-user_management.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="user_management.views.CreateUserView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">CreateUserView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.CreateUserView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.CreateView</span></code></p>
+<p>View with registration form</p>
+<dl class="py attribute">
+<dt id="user_management.views.CreateUserView.form_class">
+<code class="sig-name descname">form_class</code><a class="headerlink" href="#user_management.views.CreateUserView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#user_management.forms.RegistrationForm" title="user_management.forms.RegistrationForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">user_management.forms.RegistrationForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.CreateUserView.success_url">
+<code class="sig-name descname">success_url</code><em class="property"> = '/user_management/login'</em><a class="headerlink" href="#user_management.views.CreateUserView.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.CreateUserView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'registration/registration_form.html'</em><a class="headerlink" href="#user_management.views.CreateUserView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.views.DeleteUserView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">DeleteUserView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.DeleteUserView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.mixins.LoginRequiredMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.View</span></code></p>
+<p>View for deleting the account of the authenticated user.
+Redirects to :view: LoginUserView</p>
+<dl class="py method">
+<dt id="user_management.views.DeleteUserView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.DeleteUserView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="user_management.views.DeleteUserView.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.DeleteUserView.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.views.LoginUserView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">LoginUserView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.LoginUserView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.views.LoginView</span></code></p>
+<p>View with login form</p>
+<dl class="py attribute">
+<dt id="user_management.views.LoginUserView.form_class">
+<code class="sig-name descname">form_class</code><a class="headerlink" href="#user_management.views.LoginUserView.form_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#user_management.forms.LoginForm" title="user_management.forms.LoginForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">user_management.forms.LoginForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.LoginUserView.success_url">
+<code class="sig-name descname">success_url</code><em class="property"> = '/'</em><a class="headerlink" href="#user_management.views.LoginUserView.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.LoginUserView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'registration/login.html'</em><a class="headerlink" href="#user_management.views.LoginUserView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.views.LogoutUserView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">LogoutUserView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.LogoutUserView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.views.LogoutView</span></code></p>
+<p>View for logging out</p>
+<dl class="py attribute">
+<dt id="user_management.views.LogoutUserView.success_url">
+<code class="sig-name descname">success_url</code><em class="property"> = '/user_management/login'</em><a class="headerlink" href="#user_management.views.LogoutUserView.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.LogoutUserView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'registration/logged_out.html'</em><a class="headerlink" href="#user_management.views.LogoutUserView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.views.ProfileView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">ProfileView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.ProfileView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateView</span></code></p>
+<p>View for displaying the account of the authenticated user.</p>
+<dl class="py method">
+<dt id="user_management.views.ProfileView.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.ProfileView.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.ProfileView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'user_management/user_profile.html'</em><a class="headerlink" href="#user_management.views.ProfileView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.ProfileView.texts">
+<code class="sig-name descname">texts</code><em class="property"> = None</em><a class="headerlink" href="#user_management.views.ProfileView.texts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.ProfileView.user_for_profile">
+<code class="sig-name descname">user_for_profile</code><em class="property"> = None</em><a class="headerlink" href="#user_management.views.ProfileView.user_for_profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="user_management.views.UpdateUserView">
+<em class="property">class </em><code class="sig-prename descclassname">user_management.views.</code><code class="sig-name descname">UpdateUserView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.UpdateUserView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cruscanalyzer.html#cruscanalyzer.views.BasicView" title="cruscanalyzer.views.BasicView"><code class="xref py py-class docutils literal notranslate"><span class="pre">cruscanalyzer.views.BasicView</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.FormView</span></code></p>
+<p>View for updating the data of the authenticated user account.</p>
+<dl class="py method">
+<dt id="user_management.views.UpdateUserView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.UpdateUserView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle GET requests: instantiate a blank version of the form.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="user_management.views.UpdateUserView.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.views.UpdateUserView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle POST requests: instantiate a form instance with the passed
+POST variables and then check if it’s valid.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.UpdateUserView.success_url">
+<code class="sig-name descname">success_url</code><em class="property"> = '/user_management/profile'</em><a class="headerlink" href="#user_management.views.UpdateUserView.success_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="user_management.views.UpdateUserView.template_name">
+<code class="sig-name descname">template_name</code><em class="property"> = 'user_management/user_update.html'</em><a class="headerlink" href="#user_management.views.UpdateUserView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-user_management">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-user_management" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/user_management.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

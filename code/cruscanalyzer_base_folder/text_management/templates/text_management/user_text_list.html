@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% block title %}I miei testi{% endblock %}
+
+{% block content %}
+    {% if object_list %}
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto mr-3">
+                <h3 class="font-weight-light mb-4">Andamento complessità</h3>
+                <div id="container">
+                    <canvas id="line-chart"></canvas>
+                </div>
+                <p class="card-text"><small class="text-muted">Andamento della complessità dei tuoi testi</small></p>
+            </div>
+            <div class="col box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+                <h3 class="font-weight-light">Riepilogo</h3>
+                {{ object_list|get_count_texts }} <span class="font-weight-light">testi</span> <br>
+                {{ object_list|get_user_words }} <span class="font-weight-light">parole totali</span> <br>
+                <span class="font-weight-light">Complessità media:</span> {{ object_list|get_avg_complexity }} <br>
+                <hr>
+                <h6>Parole popolari</h6>
+                <div class="list-group list-group-flush">
+                    {% for word, frequency in object_list|get_ordered_words_frequencies_blacklist_filtered:user|slice:"5" %}
+                        <div class="list-group-item d-flex justify-content-between p-1">
+                            <div>{{ word }}</div>
+                            <div>{{ frequency }} <span class="font-weight-light">occorrenze</span></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto mt-1">
+            {% include 'text_management/base/base_user_text_header.html' %}
+            {% include 'text_management/base/base_user_text_list.html' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'js/edit_button.js' %}"></script>
+    <script src="{% static 'js/user_text_list.js' %}"></script>
+
+    {% if object_list %}
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script>
+            var inutile = [];
+            var complessita = [];
+
+            {% for c in object_list|get_user_complexity_plot %}
+                inutile.push("");
+                complessita.push({{ c }});
+            {% endfor %}
+            var config = {
+                type: 'line',
+                data: {
+                    labels: inutile,
+                    datasets: [{
+                        data: complessita,
+                        borderColor: "#3e95cd",
+                        fill: true
+                    }]},
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false
+                    },
+                }
+            };
+            window.onload = function() {
+                var ctx = document.getElementById('line-chart').getContext('2d');
+                window.myPie = new Chart(ctx, config);
+            };
+        </script>
+    {% endif %}
+{% endblock %}

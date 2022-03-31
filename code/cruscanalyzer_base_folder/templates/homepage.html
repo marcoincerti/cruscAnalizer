@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    <div class="transparent-box-width-radius-white container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+    <div class="row d-flex align-items-center justify-content-between">
+        <div class="ml-3">
+            <h1 class="greetings mb-0 font-weight-bold">Benvenuto.</h1>
+            <h5 class="greetings">Dai un'occhiata al riepilogo</h5>
+        </div>
+        <div class="vl"></div>
+        <div class="d-flex align-items-center">
+            <a type="button" class="btn btn-lg btn-info mr-3" href="{% url 'text_management:text-insert' %}">
+                Inserisci un testo
+            </a>
+            <a type="button" class="btn btn-lg btn-info" href="{% url 'text_management:text-list' %}">
+                Visualizza i tuoi testi
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div id="homepage-summary-first-box" class="col box-width-radius2 container-md col-text-box shadow p-4 mb-3 pl-10 bg-white mr-3">
+            <div class="ml-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start">
+                    <h2 class="mr-2 font-weight-light mb-3">5 testi più recenti</h2>
+                </div>
+            </div>
+            {% include 'text_management/base/base_text_list.html' with object_list=view.recent_text_list %}
+        </div>
+        <div id="homepage-summary-second-box" class="col box-width-radius2 container-md shadow col-text-box p-4 mb-3 pl-10 bg-white">
+            <div class="ml-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start">
+                    <h2 class="mr-2 font-weight-light mb-3">5 testi più complessi</h2>
+                </div>
+            </div>
+            {% include 'text_management/base/base_text_list.html' with object_list=view.complex_text_list %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock %}

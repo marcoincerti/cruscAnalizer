@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% comment %}
+    Page for displaying data relating to the analysis of text
+{% endcomment %}
+
+{% block title %}Analisi del testo{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'text_management/base/base_text_analysis_header.html' with text_data=view.text_inserted %}
+        {% include 'text_management/base/base_text_analysis.html' with items=view.text_inserted|get_filtered_analysis:user|get_dict_items %}
+    </div>
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'text_management/base/base_frequency_chart.html' with items=view.text_inserted|get_filtered_analysis:user|get_dict_items avg_frequency=view.text_inserted|get_filtered_analysis:user|get_avg_frequency word_length=view.text_inserted|get_filtered_analysis:user|get_obj_len %}
+    </div>
+    {% include 'text_management/base/translate_modal.html' with languages=view.languages %}
+    {% include 'text_management/base/compare_modal.html' %}
+    {% include 'text_management/base/complexity_modal.html' %}
+{% endblock %}
+
+{% block extra_javascript %}
+    {% include 'text_management/base/text_analysis_ajax.html' %}
+{% endblock %}

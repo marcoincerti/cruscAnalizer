@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>cruscanalyzer.tests.cruscanalyzer package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cruscanalyzer-tests-cruscanalyzer-package">
+<h1>cruscanalyzer.tests.cruscanalyzer package<a class="headerlink" href="#cruscanalyzer-tests-cruscanalyzer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cruscanalyzer.tests.cruscanalyzer.test_urls">
+<span id="cruscanalyzer-tests-cruscanalyzer-test-urls-module"></span><h2>cruscanalyzer.tests.cruscanalyzer.test_urls module<a class="headerlink" href="#module-cruscanalyzer.tests.cruscanalyzer.test_urls" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls">
+<em class="property">class </em><code class="sig-prename descclassname">cruscanalyzer.tests.cruscanalyzer.test_urls.</code><code class="sig-name descname">TestUrls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.SimpleTestCase</span></code></p>
+<p>Test class to check that base urls retrieve the correct django template</p>
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls.test_home_is_resolved">
+<code class="sig-name descname">test_home_is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls.test_home_is_resolved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls.test_other_user_profile_is_resolved">
+<code class="sig-name descname">test_other_user_profile_is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_urls.TestUrls.test_other_user_profile_is_resolved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cruscanalyzer.tests.cruscanalyzer.test_views">
+<span id="cruscanalyzer-tests-cruscanalyzer-test-views-module"></span><h2>cruscanalyzer.tests.cruscanalyzer.test_views module<a class="headerlink" href="#module-cruscanalyzer.tests.cruscanalyzer.test_views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement">
+<em class="property">class </em><code class="sig-prename descclassname">cruscanalyzer.tests.cruscanalyzer.test_views.</code><code class="sig-name descname">TestViewsTextManagement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Test class to check correct functioning of base Django views</p>
+<p>It is first tested that the views are not reachable by a not authenticated user, then view functional check</p>
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Set up of a sample test environment with a dummy client that impersonates the user and a sample text</dt><dd><p>to process during the test</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.testLogin">
+<code class="sig-name descname">testLogin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.testLogin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.test_view_home_GET">
+<code class="sig-name descname">test_view_home_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.test_view_home_GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.test_view_other_user_profile_GET">
+<code class="sig-name descname">test_view_other_user_profile_GET</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cruscanalyzer.tests.cruscanalyzer.test_views.TestViewsTextManagement.test_view_other_user_profile_GET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cruscanalyzer.tests.cruscanalyzer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cruscanalyzer.tests.cruscanalyzer" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/cruscanalyzer.tests.cruscanalyzer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

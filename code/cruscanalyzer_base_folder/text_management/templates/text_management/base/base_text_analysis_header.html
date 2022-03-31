@@ -1,0 +1,82 @@
+{% load static %}
+{% load app_filters %}
+
+<div>
+    <div class="row">
+        <div class="col-lg">
+            <h2 class="mb-0 font-weight-bold">{{ text_data.title }}</h2>
+        </div>
+        {% if not text_data.pk %}
+            <div class="col-md-auto">
+                <button id="save-text-button" class="btn btn-info">
+                    <i class="fas fa-save"></i> Salva analisi
+                </button>
+            </div>
+        {% else %}
+            {% if user.id == text_data.user_owner.id %}
+                <div class="col-md-auto">
+                    <a href="{% url 'text_management:text-update' text_data.pk %}" class="ml-4 btn btn-secondary update-text">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="{% url 'text_management:text-delete' text_data.pk %}" class="ml-2 btn btn-danger delete-text">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            {% endif %}
+            <div class="col-md-auto">
+                <button class="btn btn-info text-analysis-confronta-testo" value="{{ text_data.pk }}"
+                        data-toggle="modal" data-target="#compare-modal">
+                    <i class="fas fa-exchange-alt"></i> Confronta Testo
+                </button>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<br>
+
+<h5>
+    {% if not text_data.user_owner or user.id == text_data.user_owner.pk %}
+        Ecco i tuoi dati:
+    {% else %}
+
+        Inserito da
+        <a class="flat-link" href="{% url 'other-user' text_data.user_owner.pk %}">
+            <span class="font-weight-light">{{ text_data.user_owner.username }}</span>
+        </a>
+    {% endif %}
+</h5>
+<hr>
+{% if text_data.author %}
+    <span>Autore: {{ text_data.author }}</span>
+    <br>
+{% endif %}
+{% if text_data.link %}
+    <span>Link: </span><a class="style-link" href="{{ text_data.link }}" target="_blank">{{ text_data.link }}</a>
+    <br>
+{% endif %}
+{% if text_data.category %}
+    <span>Categoria: {{ text_data.category.name }}</span>
+    <br>
+{% endif %}
+<span>Indice di complessità: {{ text_data.complexity }}</span>
+<span class="help-tooltip complexity-helper-icon" data-target="#complexity-modal" data-toggle="modal"
+      title="Clicca per maggiori informazioni sull'indice di complessità">
+        <i class="fas fa-info-circle"></i>
+</span>
+{% if user.user_text_settings.blacklist|length > 0 %}
+    <br>
+    <span>
+        <a class="flat-link" href="{% url 'text_management:text-settings' %}">Blacklist</a>
+        {% with hidden_words=text_data|get_hidden_words_number:user %}
+            <span class="text-success">attiva</span> - {{ hidden_words }}
+            {% if hidden_words == 1 %}
+                parola nascosta
+            {% else %}
+                parole nascoste
+            {% endif %}
+        {% endwith %}
+    </span>
+{% endif %}
+<h5 class="mt-3">Frequenza della parole:</h5>
+<br>

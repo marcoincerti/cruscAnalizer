@@ -1,0 +1,28 @@
+body {
+    background: url("/static/img/background-balance-business-commerce-583846.jpg");
+    background-size: cover;
+    opacity: 0;
+}
+
+.transparent-box-width-radius-black {
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius:15px;
+}
+
+.transparent-box-width-radius-white {
+    background-color: rgba(255,255,255,0.5) !important;
+    border-radius:15px;
+}
+
+.transparent-box-width-radius-white .greetings {
+    color: #1F1F1F;
+}
+
+.transparent-box-width-radius-black .greetings {
+    color: white;
+}
+
+.vl {
+  border-left: 1px solid currentColor;
+  height: 80px;
+}

@@ -1,0 +1,20 @@
+{% extends 'base_header.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% block header_title %}
+    <h2 class="mr-2 font-weight-light">I miei testi</h2>
+    <span class="help-tooltip" data-toggle="tooltip" data-placement="bottom"
+          title="Clicca su una riga per visualizzarne le informazioni">
+        <i class="fas fa-info-circle"></i>
+    </span>
+{% endblock %}
+
+{% block header_right_actions %}
+    {% if object_list %}
+    <a class="mr-3 btn btn-transparent off main-edit-button">
+        <i class="fas fa-pen show-actions-button"></i>
+        <span style="display: none" class="font-weight-bold hide-actions-button">Annulla</span>
+    </a>
+    {% endif %}
+{% endblock %}

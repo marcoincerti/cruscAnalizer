@@ -1,0 +1,194 @@
+{% load static %}
+{% comment %}
+    json_script: Filter for converting a custom Python object (here MyTex)t to json in a safe javascript script that
+    can't be attacked with XSS attacks.
+    {% endcomment %}
+{{ view.text_inserted.to_dict_only_metadata|json_script:"text-to-save-python-object" }}
+
+<script type="text/javascript">
+    /**
+     * Ajax request to call the function for saving a text.
+     * beforeSend: block UI and show loading gif
+     * complete: unlock UI
+     * success: save button removed from HTML
+     * @param {HTMLButtonElement} button - save analysis button
+     * param of ajax call: {json} text_to_save - data of the text to save, parsed from the script generated
+     *  before with json_script
+     * */
+    function ajaxSaveTextAnalysis(button) {
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'text_management:save-text-function' %}",
+            data: {
+                'text_to_save': JSON.parse(document.getElementById('text-to-save-python-object').textContent),
+            },
+            headers:{
+                "X-CSRFToken": '{{ csrf_token }}'
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                $.blockUI({
+                    message: darkSwitch.checked ?
+                        Swal.fire({
+                            background: '#2b2b2b',
+                            title: '<span style="color: var(--main-font-color)">Salvataggio in corso<span>',
+                            html: '<span style="color: var(--main-font-color)">Attendi un attimo</span>',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                        :
+                        Swal.fire({
+                            title: 'Salvataggio in corso',
+                            text: 'Attendi un attimo',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                });
+            },
+            complete: function () {
+                $.unblockUI();
+            },
+            success: function (data) {
+                darkSwitch.checked ?
+                    Swal.fire({
+                        background: '#2b2b2b',
+                        title: '<span style="color: var(--main-font-color)">Salvataggio avvenuto con successo!<span>',
+                        html: '<span style="color: var(--main-font-color)">Goditi la tua analisi</span>',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    :
+                    Swal.fire({
+                        title: 'Salvataggio avvenuto con successo!',
+                        text: 'Goditi la tua analisi',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
+                if (data.text_saved) {
+                    button.remove();
+                }
+            }
+        });
+    }
+
+    /**
+     * Ajax request to call the function for translate a word in the selected language.
+     * beforeSend: block UI and show loading gif
+     * complete: unlock UI
+     * success: fill translated word input field with returned word.
+     *          if detect_language is true:
+     *              - set the source language select picker
+     *              - if source_language is english, set destination language select picker on italian
+     * @param {string} word - word to translate
+     * @param {string} source_lan - source language of traduction
+     * @param {string} dest_lan - destination language of traduction
+     * @param {boolean} detect_language - true if we want detect word source language
+     */
+    function ajaxTranslateWord(word, source_lan, dest_lan, detect_language) {
+        $.ajax({
+            type: "GET",
+            url: "{% url 'text_management:translate-word' %}",
+            data: {
+                'original_word': word,
+                'source_language' : source_lan,
+                'dest_language': dest_lan,
+                'detect_language': detect_language,
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                $.blockUI({
+                    message: darkSwitch.checked ?
+                        Swal.fire({
+                            background: '#2b2b2b',
+                            title: '<span style="color: var(--main-font-color)">Traduzione in corso<span>',
+                            html: '<span style="color: var(--main-font-color)">Attendi un attimo</span>',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }})
+                        :
+                        Swal.fire({
+                            title: 'Traduzione in corso',
+                            text: 'Attendi un attimo',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                });
+            },
+            complete: function () {
+                Swal.close();
+                $.unblockUI();
+            },
+            success: function(data){
+                $('#translate-modal-translated-word').val(data.translated_word);
+                if(detect_language) {
+                    let selectLanguageSource = $('#translate-modal-source-language-select');
+                    selectLanguageSource.selectpicker('val', data.language_source);
+                    selectLanguageSource.selectpicker('refresh');
+                    if(data.language_source == 'en') {
+                        let selectLanguageDest = $('#translate-modal-destination-language-select');
+                        selectLanguageDest.selectpicker('val', 'it');
+                        selectLanguageDest.selectpicker('refresh');
+                    }
+                }
+            }
+        });
+    }
+
+    /**
+     * Ajax request to call the function for search texts based on query and selected categories.
+     * beforeSend: block UI and show loading gif
+     * complete: unlock UI
+     * success: fill ListView of the resulted texts in the corresponding div,
+     *          then remove header and other template information not necessary
+     * @param {string} search - query write by the user
+     * @param {string} text_pk - primary key of the the first text,
+     *                           the one that will be compared with those resulting from the search function
+     * @param {Array} categories - array of selected categories
+     */
+    function ajaxSearchText(search, text_pk, categories) {
+        $.ajax({
+            type: "GET",
+            url: "{% url 'text_management:text-search' %}",
+            data: {
+                'search': search,
+                'category': JSON.stringify(categories),
+                'first-text-pk': text_pk,
+            },
+            beforeSend: function () {
+                $.blockUI({
+                    message: darkSwitch.checked ?
+                        Swal.fire({
+                            background: '#2b2b2b',
+                            title: '<span style="color: var(--main-font-color)">Ricerca in corso<span>',
+                            html: '<span style="color: var(--main-font-color)">Attendi un attimo</span>',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                        :
+                        Swal.fire({
+                            title: 'Ricerca in corso',
+                            text: 'Attendi un attimo',
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            }
+                        })
+                });
+                },
+            complete: function () {
+                Swal.close();
+                $.unblockUI();
+            },
+            success: function(data){
+                let modal_search_content = $('#compare-modal').find('.compare-modal-search-result');
+                modal_search_content.html(data);
+            }
+        });
+    }
+</script>
+<script src="{% static 'js/text_saving.js' %}"></script>
+<script src="{% static 'js/text_translation.js' %}"></script>
+<script src="{% static 'js/text_compare_search.js'%}"></script>

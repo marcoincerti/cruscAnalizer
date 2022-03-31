@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %}
+    Page for displaying and update text settings:
+        - blacklist
+        - minimum characters for save a word
+{% endcomment %}
+
+{% block title %}Impostazioni dei testi{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col box-width-radius2 container-md shadow p-4 pl-10 bg-white w-auto mb-0">
+            <a class="btn btn-secondary" href="{% url 'user_management:user' %}">Indietro</a>
+            <button id="settings-save-changes" class="btn btn-success"  type="submit"
+                    form="settings-form">Salva</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto mr-3">
+            <div class="container">
+                <h3 class="font-weight-bold">Parole brevi</h3>
+            </div>
+            <hr>
+            <div class="row mt-2 d-flex align-items-center justify-content-start">
+                <div class="col-lg-9 col-md-12">
+                    <label>
+                        <input name="min-characters" class="form-control style-input" type="number" min="0"
+                               form="settings-form" value="{{ user.user_text_settings.min_characters }}">
+                        Numero minimo di caratteri richiesto per salvare le parole
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+            <div class="ml-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start">
+                    <h3 class="font-weight-bold">Blacklist</h3>
+                </div>
+
+                <a class="mr-3 btn btn-transparent off main-edit-button">
+                    <i class="fas fa-pen show-actions-button"></i>
+                    <span style="display: none" class="font-weight-bold hide-actions-button">Fine</span>
+                </a>
+            </div>
+
+            <hr>
+
+            <div id="blacklist-clone-input-word" style="display: none">
+                <div class="row mt-2 d-flex align-items-center justify-content-start">
+                    <div class="col">
+                        <input name="black-word" class="form-control style-input blacklist-word"
+                               placeholder="Inserisci parola">
+                    </div>
+                    <div class="col-3 p-0 actions">
+                        <a class="delete-black-word text-danger clickable-link">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <form id="settings-form" class="mb-3" method="POST"
+                  action="{% url 'text_management:text-settings' %}"> {% csrf_token %}
+                <div id="words-list">
+                    {% if user.user_text_settings.blacklist|first != '' %}
+                        {% for black_word in user.user_text_settings.blacklist %}
+                            <div class="row mt-2 d-flex align-items-center justify-content-start">
+                                <div class="col">
+                                    <input name="black-word" class="form-control style-input blacklist-word"
+                                           value="{{ black_word }}" disabled>
+                                </div>
+                                <div class="col-3 p-0 actions">
+                                    <a class="delete-black-word text-danger clickable-link">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <span class="empty-blacklist-message" style="display: none;">
+                    {% else %}
+                        <span class="empty-blacklist-message">
+                    {% endif %}
+                            Ancora nessuna parola nella tua blacklist. Premi il pulsante modifica in alto a destra per iniziare.
+                        </span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mt-4 d-flex align-items-center justify-content-between">
+                        <a id="blacklist-add-word-button" class="btn btn-info" style="display: none;">Aggiungi parola</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'js/text_settings.js' %}"></script>
+    <script src="{% static 'js/edit_button.js' %}"></script>
+{% endblock %}

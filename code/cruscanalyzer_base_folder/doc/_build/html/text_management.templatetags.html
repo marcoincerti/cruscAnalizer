@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>text_management.templatetags package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="text-management-templatetags-package">
+<h1>text_management.templatetags package<a class="headerlink" href="#text-management-templatetags-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.templatetags.app_filters">
+<span id="text-management-templatetags-app-filters-module"></span><h2>text_management.templatetags.app_filters module<a class="headerlink" href="#module-text_management.templatetags.app_filters" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_avg_complexity">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_avg_complexity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_avg_complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get the average complexity of a set of texts.
+:param texts: Set of models “Text”.
+:returns: Average complexity as float with 2 decimals after.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_avg_complexity_all_users">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_avg_complexity_all_users</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">users</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_avg_complexity_all_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get the average complexity of all texts.
+:param users: Filter the analysis with the words inside his blacklist.
+:returns: Filtered analysis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_avg_frequency">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_avg_frequency</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_avg_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter that calculate the average frequency of a given object.
+:param obj: the object that contains words and frequencies.
+:return: the average frequency of the object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_count_texts">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_count_texts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_count_texts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get number of texts.
+:param texts: Set of models “Text”.
+:returns: Number of texts.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_dict_items">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_dict_items</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dictionary</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_dict_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to get the items of a dictionary.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_filtered_analysis">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_filtered_analysis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_filtered_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get the filtered analysis of a text (without words in user blacklist).
+:param text: to show the filtered analysis of.
+:param user: Filter the analysis with the words inside his blacklist.
+:returns: Filtered analysis.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_hidden_words_number">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_hidden_words_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_hidden_words_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets how many words have been hidden by blacklist in a text.
+:param text: Instance of model “Text”.
+:param user: Filter the analysis with the words inside his blacklist.
+:return: how many words have been hidden in the text.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_item">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dictionary</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to get the value of a specific key of a dictionary.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_obj_len">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_obj_len</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_obj_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter that calculate the length of a given object.
+:param obj: the object whose length we want to calculate.
+:return: the length of the object.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_ordered_words_frequencies_blacklist_filtered">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_ordered_words_frequencies_blacklist_filtered</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em>, <em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_ordered_words_frequencies_blacklist_filtered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get all analysis words of the texts ordered by frequency.
+:param user: Filters the popular words of the user with his blacklist.
+:param texts: Set of models “Text”.
+:returns: Five top frequency words.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_texts_by_category">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_texts_by_category</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_texts_by_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets how many texts are present in each category.
+:param texts: Set of models “Text”.
+:return: how many texts are present in each category.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_user_complexity_plot">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_user_complexity_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_user_complexity_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get complexity of the texts.
+:param texts: Set of models “Text”.
+:returns: Complexity of the texts.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="text_management.templatetags.app_filters.get_user_words">
+<code class="sig-prename descclassname">text_management.templatetags.app_filters.</code><code class="sig-name descname">get_user_words</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.templatetags.app_filters.get_user_words" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter to be used inside templates to get number of words in the texts.
+:param texts: Set of models “Text”.
+:returns: Number of words in the list of texts.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.templatetags">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-text_management.templatetags" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/text_management.templatetags.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

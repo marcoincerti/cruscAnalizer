@@ -1,0 +1,14 @@
+{% extends 'base_modal.html' %}
+{% load static %}
+
+{% block id-model %}
+    id="complexity-modal"
+{% endblock %}
+
+{% block modal_title %}
+    Indice di complessità ARI
+{% endblock %}
+
+{% block modal_content %}
+    {% include 'text_management/base/table_complexity.html' %}
+{% endblock %}

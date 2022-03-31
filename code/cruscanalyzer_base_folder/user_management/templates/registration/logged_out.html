@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block content %}
+    <h4>You logged out</h4>
+    <a href="{% url 'user_management:user-login' %}">Return Login</a>
+{% endblock %}

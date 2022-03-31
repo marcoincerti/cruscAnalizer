@@ -1,0 +1,20 @@
+{% extends 'text_management/base/base_text_list.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% comment %}
+    Page for displaying list of user saved analysis.
+{% endcomment %}
+
+{% block text_list_actions %}
+    <a href="{% url 'text_management:text-update' text.pk %}" class="ml-4 btn btn-secondary update-text">
+        <i class="fas fa-edit"></i>
+    </a>
+    <a href="{% url 'text_management:text-delete' text.pk %}" class="ml-2 btn btn-danger delete-text">
+        <i class="fas fa-trash-alt"></i>
+    </a>
+{% endblock %}
+
+{% block text_list_empty_message %}
+    <p>Nessuna analisi salvata.</p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+
+{% if compare %}
+    <form id="{{ searchbar_form_id }}" class="form-inline ml-0 mr-auto">
+{% else %}
+    <form id="{{ searchbar_form_id }}" class="form-inline ml-0 mr-auto" method="GET"
+          action="{% url 'text_management:text-search' %}">
+{% endif %}
+
+    <select id="{{ searchbar_select_categories_id }}" class="selectpicker ml-sm-2 select-categories" multiple name="category" data-style="btn-info">
+        <option class="select-all" value="0" selected="">Qualsiasi categoria</option>
+        {% for category in view.categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+    <input class="search-field form-control mr-2" type="search"
+       placeholder="Cerca..." aria-label="Cerca" name="search" size="40">
+    <button class="btn btn-outline-info search-button nav-link my-2 my-sm-0"  type="submit">
+        <i class="fas fa-search d-flex align-items-center"></i>
+    </button>
+</form>

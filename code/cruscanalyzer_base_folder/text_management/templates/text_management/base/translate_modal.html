@@ -1,0 +1,53 @@
+{% extends 'base_modal.html' %}
+{% load static %}
+
+{% block id-model %}
+    id="translate-modal"
+{% endblock %}
+
+{% block modal_title %}
+    Traduzione parola
+{% endblock %}
+
+{% block modal_content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select id="translate-modal-source-language-select" class="language-select selectpicker"
+                        data-width="100%" data-live-search="true">
+                    {% for key,lan in languages.items %}
+                        {% if lan == 'italian' %}
+                            <option value="{{ key }}" selected="">{{ lan }}</option>
+                        {% else %}
+                            <option value="{{ key }}">{{ lan }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <select id="translate-modal-destination-language-select" class="language-select selectpicker"
+                        data-width="100%" data-live-search="true">
+                    {% for key,lan in languages.items %}
+                        {% if lan == 'english' %}
+                            <option value="{{ key }}" selected="">{{ lan }}</option>
+                        {% else %}
+                            <option value="{{ key }}">{{ lan }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <input id="translate-modal-original-word" type="text"
+                   class="textinput textInput form-control disabled-text style-input" value="Ciao" disabled>
+        </div>
+        <div class="col-lg-6">
+            <input id="translate-modal-translated-word" type="text"
+                   class="textinput textInput form-control disabled-text style-input" value="" disabled>
+        </div>
+    </div>
+{% endblock %}

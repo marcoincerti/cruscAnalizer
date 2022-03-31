@@ -1,0 +1,82 @@
+{% load app_filters %}
+{% load static %}
+
+<div id="container">
+    <canvas id="bar-chart{{ id_chart|default_if_none:'' }}" class="graph" style="display: none;"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF'.split('');
+        let color = '#';
+        for (let i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    var words = [];
+    var freqs = [];
+    var avg_freq = Math.round(parseFloat('{{ avg_frequency }}'));
+    var word_length = parseInt('{{ word_length }}', 10);
+    var counter = 0;
+    var bar_limit = 74;
+
+    console.log(avg_freq, counter, word_length);
+    {% for word, freq in items %}
+        if (word_length < bar_limit) {
+            words.push('{{ word }}');
+            freqs.push('{{ freq }}');
+        } else if (parseInt('{{ freq }}', 10) >= avg_freq && counter < bar_limit) {
+            words.push('{{ word }}');
+            freqs.push('{{ freq }}');
+            counter += 1;
+        }
+    {% endfor %}
+    console.log(avg_freq, counter, word_length);
+    {#var base_colours =['#368597', '#1f515c']#} //prova questi colori
+    var base_colours =['#ff1d7b', '#7bff1d', '#ff611d' ,'#1dd9ff', '#fff200']
+    var bar_colours = [];
+    var j =0;
+    for (let i=0; i < words.length; i++) {
+        bar_colours[i] = base_colours[j];
+        j++;
+        if (j === 4) j = 0;
+    }
+
+    var config{{ id_chart|default_if_none:'' }} = {
+        type: 'bar',
+        data: {
+            datasets: [{
+                data: freqs,
+                backgroundColor: bar_colours,
+                label: 'Frequenza parole'
+            }],
+            labels: words
+        },
+
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+
+                        beginAtZero: true
+                    }
+                }]
+            },
+
+            legend: {
+                display: false
+            },
+        }
+    };
+    {% if not id_chart %}
+        window.onload = function() {
+            var ctx = document.getElementById('bar-chart').getContext('2d');
+            window.myPie = new Chart(ctx, config);
+        };
+    {% endif %}
+</script>

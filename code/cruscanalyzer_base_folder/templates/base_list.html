@@ -1,0 +1,14 @@
+{% load static %}
+
+{% comment %}
+    Basic template for lists.
+{% endcomment %}
+
+{% block content %}
+    {% block list_prev %} {% endblock %}
+    <div class="list-group list-group-flush">
+        {% block list_content %} {% endblock %}
+    </div>
+
+    {% block list_after %} {% endblock %}
+{% endblock %}

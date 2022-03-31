@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>text_management.migrations package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="text-management-migrations-package">
+<h1>text_management.migrations package<a class="headerlink" href="#text-management-migrations-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-text_management.migrations.0001_initial">
+<span id="text-management-migrations-0001-initial-module"></span><h2>text_management.migrations.0001_initial module<a class="headerlink" href="#module-text_management.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.migrations.0001_initial.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.migrations.0001_initial.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.migrations.0001_initial.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = []</em><a class="headerlink" href="#text_management.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0001_initial.Migration.initial">
+<code class="sig-name descname">initial</code><em class="property"> = True</em><a class="headerlink" href="#text_management.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0001_initial.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;CreateModel  name='Category', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;)]&gt;, &lt;CreateModel  name='Text', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('author', &lt;django.db.models.fields.CharField&gt;), ('link', &lt;django.db.models.fields.URLField&gt;), ('category', &lt;django.db.models.fields.related.ManyToManyField&gt;)]&gt;, &lt;CreateModel  name='Analysis', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('word', &lt;django.db.models.fields.CharField&gt;), ('frequency', &lt;django.db.models.fields.IntegerField&gt;), ('text', &lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</em><a class="headerlink" href="#text_management.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.migrations.0002_auto_20200503_1409">
+<span id="text-management-migrations-0002-auto-20200503-1409-module"></span><h2>text_management.migrations.0002_auto_20200503_1409 module<a class="headerlink" href="#module-text_management.migrations.0002_auto_20200503_1409" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.migrations.0002_auto_20200503_1409.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.migrations.0002_auto_20200503_1409.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.migrations.0002_auto_20200503_1409.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.migrations.0002_auto_20200503_1409.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('text_management', '0001_initial')]</em><a class="headerlink" href="#text_management.migrations.0002_auto_20200503_1409.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0002_auto_20200503_1409.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;RemoveField  model_name='text', name='category'&gt;, &lt;AddField  model_name='text', name='category', field=&lt;django.db.models.fields.related.ForeignKey&gt;, preserve_default='true'&gt;]</em><a class="headerlink" href="#text_management.migrations.0002_auto_20200503_1409.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.migrations.0003_auto_20200503_1410">
+<span id="text-management-migrations-0003-auto-20200503-1410-module"></span><h2>text_management.migrations.0003_auto_20200503_1410 module<a class="headerlink" href="#module-text_management.migrations.0003_auto_20200503_1410" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.migrations.0003_auto_20200503_1410.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.migrations.0003_auto_20200503_1410.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.migrations.0003_auto_20200503_1410.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.migrations.0003_auto_20200503_1410.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('text_management', '0002_auto_20200503_1409')]</em><a class="headerlink" href="#text_management.migrations.0003_auto_20200503_1410.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0003_auto_20200503_1410.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;RemoveField  model_name='text', name='category'&gt;, &lt;AddField  model_name='text', name='category', field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;]</em><a class="headerlink" href="#text_management.migrations.0003_auto_20200503_1410.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.migrations.0004_auto_20200503_1842">
+<span id="text-management-migrations-0004-auto-20200503-1842-module"></span><h2>text_management.migrations.0004_auto_20200503_1842 module<a class="headerlink" href="#module-text_management.migrations.0004_auto_20200503_1842" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.migrations.0004_auto_20200503_1842.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.migrations.0004_auto_20200503_1842.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.migrations.0004_auto_20200503_1842.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.migrations.0004_auto_20200503_1842.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('auth', '__first__'), ('text_management', '0003_auto_20200503_1410')]</em><a class="headerlink" href="#text_management.migrations.0004_auto_20200503_1842.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0004_auto_20200503_1842.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;AddField  model_name='text', name='user_owner', field=&lt;django.db.models.fields.related.ForeignKey&gt;, preserve_default=False&gt;, &lt;AlterField  model_name='text', name='author', field=&lt;django.db.models.fields.CharField&gt;&gt;, &lt;RemoveField  model_name='text', name='category'&gt;, &lt;AddField  model_name='text', name='category', field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;, &lt;AlterField  model_name='text', name='link', field=&lt;django.db.models.fields.URLField&gt;&gt;]</em><a class="headerlink" href="#text_management.migrations.0004_auto_20200503_1842.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.migrations.0005_text_complexity">
+<span id="text-management-migrations-0005-text-complexity-module"></span><h2>text_management.migrations.0005_text_complexity module<a class="headerlink" href="#module-text_management.migrations.0005_text_complexity" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="text_management.migrations.0005_text_complexity.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">text_management.migrations.0005_text_complexity.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#text_management.migrations.0005_text_complexity.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="text_management.migrations.0005_text_complexity.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('text_management', '0004_auto_20200503_1842')]</em><a class="headerlink" href="#text_management.migrations.0005_text_complexity.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="text_management.migrations.0005_text_complexity.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;AddField  model_name='text', name='complexity', field=&lt;django.db.models.fields.DecimalField&gt;, preserve_default=False&gt;]</em><a class="headerlink" href="#text_management.migrations.0005_text_complexity.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-text_management.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-text_management.migrations" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/text_management.migrations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

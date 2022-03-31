@@ -1,0 +1,12 @@
+{% for word, frequency in items %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td class="text-word">{{ word }}</td>
+        <td>{{ frequency }}</td>
+        <td>
+            <a class="btn btn-info translate-word" data-toggle="modal" data-target="#translate-modal">
+                <i class="fas fa-language"></i>
+            </a>
+        </td>
+    </tr>
+{% endfor %}

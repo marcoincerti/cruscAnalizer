@@ -1,0 +1,22 @@
+{% load static %}
+
+{% comment %}
+    Basic template for tables.
+    Extend it to create any page with tables.
+{% endcomment %}
+
+<div class="table-responsive">
+    {% block table_prev %} {% endblock %}
+    <table class="data-table table table-striped table-borderless table-hover">
+        <thead class="thead-dark">
+        <tr>
+            {% block table_head %} {% endblock %}
+        </tr>
+        </thead>
+        <tbody>
+        {% block table_body %} {% endblock %}
+        </tbody>
+    </table>
+
+    {% block table_after %} {% endblock %}
+</div>

@@ -1,0 +1,53 @@
+{% extends 'base_list.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% comment %}
+    Basic template for lists of text analysis.
+    Extend it to create any page with lists of analysis.
+{% endcomment %}
+
+{% block list_content %}
+    {% for text in object_list|dictsortreversed:'complexity' %}
+        <div class="text-element d-flex justify-content-between">
+            {% if object_list.compare_url %}
+                <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                   href="{% url 'text_management:compare-text-analysis' object_list.first_pk text.pk %}">
+            {% else %}
+                <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                   href="{% url 'text_management:saved-text-analysis' text.pk %}">
+            {% endif %}
+            <div>
+                <span class="user-text-list-item-title font-weight-bold">{{ text.title }}</span>
+                {% if text.author %}
+                    <span class="user-text-list-item-author">di {{ text.author }}</span>
+                {% endif %}
+                <br>
+                {% if text.category %}
+                    Categoria: {{ text.category }}
+                {% else %}
+                    Nessuna categoria
+                {% endif %}
+                {% block text_list_username %} {% endblock %}
+            </div>
+            <div class="multiple_span">
+                <span class="badge badge-info badge-pill">Complessità: {{ text.complexity }}</span> <br>
+                <span class="badge badge-light badge-pill">
+                    {{ text.word_counter }}
+                    {% if text.word_counter == 1 %}
+                        parola
+                    {% else %}
+                        parole
+                    {% endif %}
+                </span>
+            </div>
+            </a>
+            <div class="actions justify-content-start align-items-center">
+                {% block text_list_actions %} {% endblock %}
+            </div>
+        </div>
+
+    {% empty %}
+        {% block text_list_empty_message %} {% endblock %}
+    {% endfor %}
+{% endblock %}

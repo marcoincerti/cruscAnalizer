@@ -1,0 +1,20 @@
+{% load static %}
+
+{% comment %}
+    Basic template for headers.
+{% endcomment %}
+
+<div class="ml-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-start">
+        {% block header_title %} {% endblock %}
+    </div>
+    {% block header_right_actions %} {% endblock %}
+</div>
+
+<div class="container mtb-1 text-secondary" style="font-size: small">
+    {% block header_subtitle %} {% endblock %}
+</div>
+
+<div id="header-tabs">
+    {% block header_tabs %} {% endblock %}
+</div>

@@ -1,0 +1,66 @@
+{% load static %}
+
+
+<!-- Static navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    {#    <div class="box">#}
+    {#        <img src={% static "img/Logo_Cruscanalyzer.png" %} alt="">#}
+    {#    </div>#}
+    <a class="navbar-brand" href="{% url 'home' %}">
+        {#        <img src="{% static "img/cruscanalyzer_logo.png" %}" width="30" height="30" alt="">#}
+        <img src="{% static "img/business.png" %}" width="30" height="30" alt="">
+    </a>
+    <a href="{% url 'home' %}">
+        <span class="navbar-brand mb-0 h1 ">Cruscanalyzer</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto ">
+            {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href={% url 'text_management:text-insert' %}>Nuovo testo</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href={% url 'text_management:text-list' %}>I miei testi</a>
+                </li>
+            {% endif %}
+        </ul>
+        <!-- the rest of your code comes here -->
+        {% if user.is_authenticated %}
+            {% with searchbar_form_id='navbar-search-form' searchbar_select_categories_id='navbar-select-categories' %}
+                {% include 'searchbar.html' with compare=False %}
+            {% endwith %}
+        {% endif %}
+
+        <i class="fas fa-sun fa-theme"></i>
+        <div class="custom-control custom-switch ml-2">
+            <input type="checkbox" class="custom-control-input theme-toggle" id="darkSwitch" />
+            <label class="custom-control-label" for="darkSwitch">
+                <i class="far fa-moon fa-theme"></i>
+            </label>
+        </div>
+
+        {% if user.is_authenticated %}
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item active">
+                    <a class="btn btn-sm btn-outline-success mr-2" href="{% url 'text_management:dashboard' %}"
+                       role="button"><i class="fas fa-chart-line"></i></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="btn btn-sm btn-outline-secondary mr-2" href="{% url 'user_management:user' %}"
+                       role="button">{{ user.username }}</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'user_management:user-logout' %}"
+                       role="button">Logout</a>
+                </li>
+            </ul>
+        {% endif %}
+
+    </div>
+</nav>

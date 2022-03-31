@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Modifica testo{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 bg-white w-auto">
+        <h2 class="font-weight-light">Aggiorna i dati del testo: {{ object.title }}</h2>
+        <hr>
+        {% crispy form %}
+    </div>
+{% endblock %}

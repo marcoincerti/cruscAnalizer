@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %}
+Template used to show the authenticated user data (account).
+Includes the base_user_profile template.
+{% endcomment %}
+
+{% block title %}Profilo{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'user_management/base/base_user_profile.html' with user_for_profile=view.user_for_profile texts=view.texts title_profile='Il mio profilo'%}
+    </div>
+{% endblock %}

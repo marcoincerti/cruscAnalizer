@@ -1,0 +1,41 @@
+{% extends 'base_header.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% block header_title %}
+    <h2 class="mr-2 font-weight-light">Risultato Ricerca </h2>
+    <span class="help-tooltip" data-toggle="tooltip" data-placement="bottom"
+          title="Clicca su una riga per visualizzarne le informazioni">
+        <i class="fas fa-info-circle"></i>
+    </span>
+{% endblock %}
+
+{% if object_list %}
+    {% block header_subtitle %}
+        <h5 class="text-muted">
+            <div class="search-list-texts-information">
+                {{ object_list.count }}
+                {% if object_list.count == 1 %}
+                    risultato
+                {% else %}
+                    risultati
+                {% endif %}
+            </div>
+            <div class="search-list-users-information">
+                {{ users_list.count }}
+                {% if users_list.count == 1 %}
+                    risultato
+                {% else %}
+                    risultati
+                {% endif %}
+            </div>
+        </h5>
+    {% endblock %}
+{% endif %}
+
+{% block header_tabs %}
+    <nav class="nav nav-pills header-tabs flex-column flex-sm-row mt-2 mb-4">
+        <a id="search-text-header-testi" class="flex-sm-fill text-sm-center nav-link active btn-outline-info">Testi</a>
+        <a id="search-text-header-utenti" class="flex-sm-fill text-sm-center nav-link">Utenti</a>
+    </nav>
+{% endblock %}

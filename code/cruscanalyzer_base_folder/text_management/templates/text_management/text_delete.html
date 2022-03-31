@@ -1,0 +1,28 @@
+{% extends 'base.html' %}#
+{% load static %}
+
+{% block title %}Eliminazione testo{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 bg-white w-auto">
+        <h1 class="font-weight-light">Eliminazione del testo</h1>
+        <br>
+        <h5>Vuoi davvero cancellare l'analisi?</h5>
+        <hr>
+        <p>Titolo: {{ object.title }}</p>
+        {% if object.author %}
+            <p>Autore: {{ object.author }}</p>
+        {% endif %}
+        {% if text.category %}
+            <p>Categoria: {{ text.category }}</p>
+        {% else %}
+            <p>Nessuna categoria</p>
+        {% endif %}
+        <form method="post">{% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="Elimina">
+            <a class="btn btn-secondary" href="{% url 'text_management:text-list' %}">
+                Annulla
+            </a>
+        </form>
+    </div>
+{% endblock %}

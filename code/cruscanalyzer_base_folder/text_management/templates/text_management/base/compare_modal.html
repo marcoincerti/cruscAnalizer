@@ -1,0 +1,16 @@
+{% extends 'base_modal.html' %}
+{% load static %}
+
+{% block id-model %}
+    id="compare-modal"
+{% endblock %}
+{% block modal_title %}
+    Scegli testo da confrontare
+{% endblock %}
+{% block modal_content %}
+    {% with  searchbar_form_id='compare-modal-search-form' searchbar_select_categories_id='compare-modal-select-categories' %}
+        {% include 'searchbar.html' with compare=True %}
+    {% endwith %}
+    <div class="mt-5 compare-modal-search-result"></div>
+
+{% endblock %}

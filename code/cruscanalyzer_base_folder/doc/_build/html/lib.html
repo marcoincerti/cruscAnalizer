@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>lib package &#8212; CruscAnalyzer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lib-package">
+<h1>lib package<a class="headerlink" href="#lib-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-lib.text_analysis">
+<span id="lib-text-analysis-module"></span><h2>lib.text_analysis module<a class="headerlink" href="#module-lib.text_analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="lib.text_analysis.analyze_text">
+<code class="sig-prename descclassname">lib.text_analysis.</code><code class="sig-name descname">analyze_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.text_analysis.analyze_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the words of a text with their frequency.</p>
+<p>Uses NLTK RegexpTokenizer in order to tokenize lowered words not with only blank space but also with all the punctuation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source_text</strong> (<em>String</em>) – Text to analyze</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>TypeError</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Counter object (sub-class of dict) with all the words and their frequency</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lib.text_analysis.ari_complexity_text">
+<code class="sig-prename descclassname">lib.text_analysis.</code><code class="sig-name descname">ari_complexity_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.text_analysis.ari_complexity_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the complexity of a text.</p>
+<p>Uses RegexpTokenizer in order to tokenize words not with only blank space but also with all the punctuation.
+Complexity calculated with the ARI algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source_text</strong> (<em>String</em>) – Texto to calculate the complexity of.</p>
+</dd>
+</dl>
+<p>:raises TypeError
+:returns: Float with two digit after decimal, representing the complexity.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.text_translation">
+<span id="lib-text-translation-module"></span><h2>lib.text_translation module<a class="headerlink" href="#module-lib.text_translation" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="lib.text_translation.detect_language">
+<code class="sig-prename descclassname">lib.text_translation.</code><code class="sig-name descname">detect_language</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.text_translation.detect_language" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies the source language of a word</p>
+<p>Uses Google Translate API to detect the language of the word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> (<em>String</em>) – Word to detect the language of</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>TypeError</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Language prefix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lib.text_translation.get_languages">
+<code class="sig-prename descclassname">lib.text_translation.</code><code class="sig-name descname">get_languages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.text_translation.get_languages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the dictionary of languages of Google Translate.</p>
+<p>{‘prefix’:’language’}
+es: ‘it’:’italiano’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The dictionary of languages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lib.text_translation.translate">
+<code class="sig-prename descclassname">lib.text_translation.</code><code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">word</span></em>, <em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">dest</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.text_translation.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that translates a word into a chosen language</p>
+<p>Uses Google Translate API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word</strong> (<em>String</em>) – word to translate</p></li>
+<li><p><strong>src</strong> (<em>String</em>) – source language prefix</p></li>
+<li><p><strong>dest</strong> (<em>String</em>) – target language prefix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>TypeError</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Translated word</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lib" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CruscAnalyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Team 8.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/lib.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

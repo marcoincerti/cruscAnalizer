@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load app_filters %}
+
+{% block title %}
+    Risultato Ricerca
+{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'text_management/base/base_search_text_header.html' %}
+        <div class="search-list-texts-information">
+            {% include 'text_management/base/base_search_text_list.html' %}
+        </div>
+        <div class="search-list-users-information">
+            {% include 'user_management/base/base_user_list.html' with object_list=users_list %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'js/search_list.js' %}"></script>
+{% endblock %}

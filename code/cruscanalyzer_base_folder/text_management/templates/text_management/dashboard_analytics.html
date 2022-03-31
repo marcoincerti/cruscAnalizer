@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load app_filters %}
+{% load static %}
+
+{% comment %}
+
+{% endcomment %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        <div class="sorted-table__container">
+            <p style="font-size: 25px; font-weight: bolder;">
+                Statistiche generali
+            </p>
+        </div>
+        <div class="row">
+            <div class="col col-lg-9">
+                <div class="card-columns">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p style="color: rgb(101, 221, 155); font-weight: bold; text-align: center; border-bottom: 0; font-size: 50px; margin-bottom: 0px;">
+                                {{ view.object_list|get_ordered_words_frequencies_blacklist_filtered:user|length }}
+                            </p>
+                            <p style=" font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                                Parole totali
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p style="color: #8E44AD; font-weight: bold; text-align: center; border-bottom: 0; font-size: 50px;
+                    margin-bottom: 0px;">
+                                {{ view.object_list|length }}
+                            </p>
+                            <p style="font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                                Testi presenti
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p style="color: #00FFFF; font-weight: bold; text-align: center; border-bottom: 0; font-size: 50px; margin-bottom: 0px;">
+                                {{ view.object_users|get_avg_complexity_all_users }}
+                            </p>
+                            <p style=" font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                                Complessità media
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p style="color: #CB4335; font-weight: bold; text-align: center; border-bottom: 0; font-size: 50px; margin-bottom: 0px;">
+                                {{ view.object_categories|length }}
+                            </p>
+                            <p style="font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                                Categorie presenti
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p style="color: #ff9d00; font-weight: bold; text-align: center; border-bottom: 0; font-size: 50px;
+                    margin-bottom: 0px;">
+                                {{ view.object_users|length }}
+                            </p>
+                            <p style="font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                                Utenti totali
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3">
+                <div class="content text-center">
+                    <p style="font-size: 18px; font-weight: bold; border-bottom: 0; text-align: center;">
+                        Testi divisi per categoria
+                    <div class="list-group list-group-flush">
+                        {% for category, frequency in view.object_list|get_texts_by_category %}
+                           <a href="{% url 'text_management:text-search' %}?category={{ category.pk }}"
+                              class="list-group-item list-group-item-action d-flex justify-content-between p-1">
+                                <span>{{ category.name }}</span>
+                                <span>{{ frequency }}
+                                    <span class="font-weight-light">
+                                        {% if frequency == 1 %}
+                                            testo
+                                        {% else %}
+                                            testi
+                                        {% endif %}
+                                    </span>
+                                </span>
+                            </a>
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        <p style="font-size: 25px; font-weight: bolder;">
+            Parole frequenti
+        </p>
+        {% include 'text_management/base/base_text_analysis.html' with items=view.object_list|get_ordered_words_frequencies_blacklist_filtered:user %}
+        {% include 'text_management/base/translate_modal.html' with languages=view.languages %}
+    </div>
+    <div class="box-width-radius2 container-md shadow p-4 mb-3 pl-10 bg-white w-auto">
+        {% include 'text_management/base/base_frequency_chart.html' with items=view.object_list|get_ordered_words_frequencies_blacklist_filtered:user avg_frequency=view.object_list|get_ordered_words_frequencies_blacklist_filtered:user|get_avg_frequency word_length=view.object_list|get_ordered_words_frequencies_blacklist_filtered:user|get_obj_len %}
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    {% include 'text_management/base/text_analysis_ajax.html' %}
+{% endblock %}
