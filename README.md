@@ -21,9 +21,9 @@ In aggiunta, si potrà visualizzare la traduzione di una qualsiasi parola presen
 Il team di Cruscanalyzer è composto da 5 persone con conoscenze di programmazione affini che non hanno problemi a sviluppare sia front-end che back-end.
 Nonostante ciò ognuno ha qualche qualità sviluppata negli anni:
 
-* ### **_(Matr. 119602)_ Davide Carletti**
-  * Gestisce e coordina il team di sviluppo, producendo anche tutta la documentazione richiesta. Specializzato nello sviluppo database.
-  * [Repository privato](https://dw.gnet.it/dadecarlet/team8_carletti_davide)
+* ### **_(Matr. 242477)_ Marco Incerti**
+  * Specializzato nello sviluppo del software lato utenti e grafici e della grafica dell'applicativo, curando anche la logica dietro al progetto.
+  * [Repository privato](https://dw.gnet.it/marco_incerti/team8_incerti)
 <br><br>
 
 * ### **_(Matr. 118798)_ Filippo Fontana**
@@ -31,9 +31,9 @@ Nonostante ciò ognuno ha qualche qualità sviluppata negli anni:
   * [Repository privato](https://dw.gnet.it/filip/team-8_fontana)
 <br><br>
 
-* ### **_(Matr. 242477)_ Marco Incerti**
-  * Specializzato nello sviluppo del software lato utenti e grafici e della grafica dell'applicativo.
-  * [Repository privato](https://dw.gnet.it/marco_incerti/team8_incerti)
+* ###**_(Matr. 119602)_ Davide Carletti**
+  * Gestisce e coordina il team di sviluppo, producendo anche tutta la documentazione richiesta. Specializzato nello sviluppo database.
+  * [Repository privato](https://dw.gnet.it/dadecarlet/team8_carletti_davide)
 <br><br>
 
 * ### **_(Matr. 121928)_ Gabriele Mattioli**
